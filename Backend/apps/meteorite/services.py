@@ -68,7 +68,7 @@ def row_to_meteorite(row):
         reclong = _to_cords(row.get("reclong"), -180, 180)
         )
     
-def import_metorites(route_csv=None, limit=None):
+def import_meteorites(route_csv=None, limit=None):
     if route_csv:
         with open(route_csv, encoding="utf-8") as file:
             rows = list(csv.DictReader(file))

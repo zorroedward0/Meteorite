@@ -1,0 +1,23 @@
+:root {
+  --fondo-1: #0f172a;
+  --fondo-2: #1e293b;
+  --panel: rgba(30, 41, 59, 0.7);
+  --panel-claro: rgba(203, 213, 225, 0.25);
+  --borde: rgba(100, 116, 139, 0.4);
+  --borde-activo: #6bb4d8;
+  --acento: #e08e55;
+  --acento-suave: #f2b27e;
+  --azul: #6bb4d8;
+  --gris: #94a3b8;
+  --gris-medio: #64748b;
+  --texto: #f8fafc;
+  --texto-suave: #94a3b8;
+  --icon-texto: #cbd5e1;
+  --campo: rgba(15, 23, 42, 0.5);
+  --radio-tarjeta: 16px;
+  --radio-boton: 12px;
+  --radio-chico: 10px;
+  --radio-campo: 8px;
+  --tipografia: "Poppins", "Segoe UI", system-ui, sans-serif;
+  --sombra: 0 8px 24px rgba(2, 6, 23, 0.55);
+}

@@ -1,0 +1,89 @@
+.login {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-card {
+  width: min(400px, 100%);
+  padding: 38px 34px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  position: relative;
+  z-index: 1;
+}
+
+.login-icon {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.login-title {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--icon-texto);
+}
+
+.login-subtitle {
+  font-size: 13px;
+  color: var(--texto-suave);
+  line-height: 1.55;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.login-error {
+  color: #fecaca;
+  background: rgba(153, 27, 27, 0.28);
+  border: 1px solid rgba(248, 113, 113, 0.4);
+  border-radius: var(--radio-campo);
+  padding: 10px 12px;
+  font-size: 13px;
+}
+
+.guest-link {
+  background: none;
+  border: none;
+  color: var(--texto-suave);
+  font-size: 13px;
+  cursor: pointer;
+  padding: 4px 2px;
+  align-self: center;
+}
+
+.guest-link:hover {
+  color: var(--texto);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.orbit {
+  position: absolute;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 50%;
+}
+
+.orbit-1 {
+  width: 560px;
+  height: 560px;
+  top: -180px;
+  left: -160px;
+}
+
+.orbit-2 {
+  width: 430px;
+  height: 430px;
+  bottom: -150px;
+  right: -130px;
+  border-style: dashed;
+}

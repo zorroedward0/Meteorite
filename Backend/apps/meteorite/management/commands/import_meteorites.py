@@ -2,7 +2,7 @@ import time
 
 from django.core.management.base import BaseCommand
 
-from apps.meteorite.services import import_metorites
+from apps.meteorite.services import import_meteorites
 
 
 class Command(BaseCommand):
@@ -14,7 +14,7 @@ class Command(BaseCommand):
         
     def handle(self, *args, **options):
         inicio = time.perf_counter()
-        informe = import_metorites(route_csv=options["route"], limit=options["limit"])
+        informe = import_meteorites(route_csv=options["route"], limit=options["limit"])
         segundos = time.perf_counter() - inicio
         self.stdout.write(self.style.SUCCESS(
             f"Recibidos: {informe['received']} | "
