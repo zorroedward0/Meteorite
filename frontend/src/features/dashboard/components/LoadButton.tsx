@@ -14,10 +14,6 @@ export default function LoadButton({ onLoad }: { onLoad: () => void }) {
   const [error, setError] = useState("")
 
   async function load() {
-     if(!authenticated) {
-        setError("HTTP 401 · la carga masiva exige iniciar sesión con usuario.")
-        return
-      }
       
     setLoading(true)
     setError("")
