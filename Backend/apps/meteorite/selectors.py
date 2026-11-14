@@ -1,3 +1,5 @@
+from django.db.models.aggregates import Avg, Count, Max, Min, Sum
+
 from .models import Meteorite
 
 
@@ -21,3 +23,38 @@ def filter_meteorites(params):
         qs = qs.filter(year__lte=int(year_max))
     
     return qs
+
+def get_stats(params):
+    qs = filter_meteorites(params)
+
+    metrics = qs.aggregate(
+        total=Count("id"),
+        mass_total=Sum("mass_g"),
+        mass_average=Avg("mass_g"),
+        mass_max=Max("mass_g"),
+        mass_min=Min("mass_g")
+    )
+
+    by_class = list(
+        qs.values("recclass")
+        .annotate(quantity=Count("id"), mass=Sum("mass_g"))
+        .order_by("-quantity")[:20]
+    )
+
+    by_year = list(
+        qs.values("year")
+        .annotate(quantity=Count("id"), mass=Sum("mass_g"))
+        .order_by("-year")
+    )
+
+    by_fall = list(
+        qs.values("fall")
+        .annotate(quantity=Count("id"))
+    )
+
+    return {
+        "metrics": metrics,
+        "by_class": by_class,
+        "by_year": by_year,
+        "by_fall": by_fall
+    }
