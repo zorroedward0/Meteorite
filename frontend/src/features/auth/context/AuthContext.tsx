@@ -27,7 +27,7 @@ function initialMode(): SessionMode {
   if (readToken()) {
     return "user";
   }
-  if (localStorage.getItem(MODE_KEY) === "guest") {
+  if (sessionStorage.getItem(MODE_KEY) === "guest") {
     return "guest";
   }
   return null;
@@ -44,18 +44,18 @@ export function SessionProvider({ children }: { children: ReactNode }) {
       mode: mode,
       authenticated: mode === "user",
       openSession() {
-        localStorage.setItem(MODE_KEY, "user");
+        sessionStorage.setItem(MODE_KEY, "user");
         setMode("user");
       },
 
       openGuest() {
-        localStorage.setItem(MODE_KEY, "guest");
+        sessionStorage.setItem(MODE_KEY, "guest");
         setMode("guest");
       },
 
       logout() {
         clearToken();
-        localStorage.removeItem(MODE_KEY);
+        sessionStorage.removeItem(MODE_KEY);
         setMode(null);
       },
 
